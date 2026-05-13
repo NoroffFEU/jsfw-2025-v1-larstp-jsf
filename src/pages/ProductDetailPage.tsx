@@ -5,10 +5,13 @@ import { useCart } from "../hooks/useCart";
 import type { Product } from "../types/product";
 
 function formatPrice(price: number) {
-  return new Intl.NumberFormat("en-US", {
+  return new Intl.NumberFormat("en-IE", {
     style: "currency",
-    currency: "USD",
+    currency: "EUR",
   }).format(price);
+  {
+    /* eew I accidentally put dollars */
+  }
 }
 
 export function ProductDetailPage() {
@@ -51,12 +54,12 @@ export function ProductDetailPage() {
   if (error || !product) {
     return (
       <div className="p-8 text-center">
-        <p className="text-red-500 mb-4">
+        <p className="mb-4 text-red-500">
           Error: {error || "Product not found"}
         </p>
         <button
           onClick={() => navigate("/")}
-          className="px-4 py-2 bg-rose-600 text-white rounded-lg hover:bg-rose-700"
+          className="px-4 py-2 text-white rounded-lg bg-rose-600 hover:bg-rose-700"
         >
           Back to Shop
         </button>
@@ -69,16 +72,15 @@ export function ProductDetailPage() {
   const currentPrice = hasDiscount ? product.discountedPrice : product.price;
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-10 sm:px-6 lg:px-8">
+    <div className="px-4 py-10 mx-auto max-w-7xl sm:px-6 lg:px-8">
       <button
         onClick={() => navigate("/")}
-        className="mb-8 text-rose-600 hover:text-rose-700 font-medium"
+        className="mb-8 font-medium text-rose-600 hover:text-rose-700"
       >
         ← Back to Shop
       </button>
 
       <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
-        {/* Image */}
         <div>
           <div className="relative aspect-[4/3] bg-slate-100 rounded-lg overflow-hidden">
             <img
@@ -94,10 +96,9 @@ export function ProductDetailPage() {
           </div>
         </div>
 
-        {/* Details */}
         <div className="space-y-6">
           <div>
-            <h1 className="text-3xl font-bold text-slate-900 mb-2">
+            <h1 className="mb-2 text-3xl font-bold text-slate-900">
               {product.title}
             </h1>
             <div className="flex items-center gap-3">
@@ -107,11 +108,10 @@ export function ProductDetailPage() {
             </div>
           </div>
 
-          <p className="text-slate-600 leading-relaxed">
+          <p className="leading-relaxed text-slate-600">
             {product.description}
           </p>
 
-          {/* Price */}
           <div className="space-y-2">
             <p className="text-3xl font-bold text-slate-900">
               {formatPrice(currentPrice ?? product.price)}
@@ -123,10 +123,9 @@ export function ProductDetailPage() {
             )}
           </div>
 
-          {/* Tags */}
           {product.tags.length > 0 && (
             <div>
-              <p className="text-sm font-medium text-slate-600 mb-2">Tags:</p>
+              <p className="mb-2 text-sm font-medium text-slate-600">Tags:</p>
               <ul className="flex flex-wrap gap-2 list-none">
                 {product.tags.map((tag) => (
                   <li
@@ -140,7 +139,6 @@ export function ProductDetailPage() {
             </div>
           )}
 
-          {/* Add to Cart Button */}
           <button
             onClick={() =>
               addToCart({
@@ -149,14 +147,13 @@ export function ProductDetailPage() {
                 price: currentPrice ?? product.price,
               })
             }
-            className="w-full px-6 py-3 bg-rose-600 text-white font-semibold rounded-lg hover:bg-rose-700 transition"
+            className="w-full px-6 py-3 font-semibold text-white transition rounded-lg bg-rose-600 hover:bg-rose-700"
           >
             Add to Cart
           </button>
         </div>
       </div>
 
-      {/* Reviews */}
       {product.reviews && product.reviews.length > 0 && (
         <div className="mt-16 space-y-6">
           <h2 className="text-2xl font-bold text-slate-900">Reviews</h2>
@@ -164,7 +161,7 @@ export function ProductDetailPage() {
             {product.reviews.map((review) => (
               <div
                 key={review.id}
-                className="p-4 border border-slate-200 rounded-lg"
+                className="p-4 border rounded-lg border-slate-200"
               >
                 <div className="flex items-center justify-between mb-2">
                   <p className="font-medium text-slate-900">
@@ -172,7 +169,7 @@ export function ProductDetailPage() {
                   </p>
                   <span className="text-amber-600">★ {review.rating}</span>
                 </div>
-                <p className="text-slate-600 text-sm">{review.description}</p>
+                <p className="text-sm text-slate-600">{review.description}</p>
               </div>
             ))}
           </div>
