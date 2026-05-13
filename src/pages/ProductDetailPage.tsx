@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getProductById } from "../services/products";
 import { useCart } from "../hooks/useCart";
+import { useToast } from "../hooks/useToast";
 import type { Product } from "../types/product";
 
 function formatPrice(price: number) {
@@ -18,6 +19,7 @@ export function ProductDetailPage() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const { addToCart } = useCart();
+  const { addToast } = useToast();
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -140,13 +142,14 @@ export function ProductDetailPage() {
           )}
 
           <button
-            onClick={() =>
+            onClick={() => {
               addToCart({
                 productId: product.id,
                 title: product.title,
                 price: currentPrice ?? product.price,
-              })
-            }
+              });
+              addToast(`Added ${product.title} to cart`, "success");
+            }}
             className="w-full px-6 py-3 font-semibold text-white transition rounded-lg bg-rose-600 hover:bg-rose-700"
           >
             Add to Cart
