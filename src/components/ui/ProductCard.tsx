@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import type { Product } from "../../types/product";
 
 type ProductCardProps = {
@@ -12,12 +13,16 @@ function formatPrice(price: number) {
 }
 
 export function ProductCard({ product }: ProductCardProps) {
+  const navigate = useNavigate();
   const hasDiscount =
     product.discountedPrice !== null && product.discountedPrice !== undefined;
   const currentPrice = hasDiscount ? product.discountedPrice : product.price;
 
   return (
-    <article className="overflow-hidden transition bg-white border shadow-sm rounded-2xl border-slate-200 hover:-translate-y-1 hover:shadow-lg">
+    <article
+      onClick={() => navigate(`/product/${product.id}`)}
+      className="overflow-hidden transition bg-white border shadow-sm cursor-pointer rounded-2xl border-slate-200 hover:-translate-y-1 hover:shadow-lg"
+    >
       <div className="relative aspect-[4/3] bg-slate-100">
         <img
           src={product.image.url}
