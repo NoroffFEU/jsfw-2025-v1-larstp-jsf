@@ -61,7 +61,7 @@ export function ProductCard({ product }: ProductCardProps) {
   return (
     <article
       onClick={() => navigate(`/product/${product.id}`)}
-      className="transition border shadow-sm cursor-pointer bg-card-bg rounded-2xl border-card-border hover:-translate-y-1 hover:shadow-lg hover:shadow-teal-accent/20"
+      className="flex flex-col transition border shadow-sm cursor-pointer bg-card-bg rounded-2xl border-card-border hover:-translate-y-1 hover:shadow-lg hover:shadow-teal-accent/20"
     >
       <div className="relative overflow-hidden rounded-t-2xl aspect-4/3 bg-card-img-bg">
         <img
@@ -87,9 +87,9 @@ export function ProductCard({ product }: ProductCardProps) {
         )}
       </div>
 
-      <div className="p-4 space-y-4">
-        <div className="space-y-2">
-          <h2 className="text-lg font-semibold text-[var(--teal)]">
+      <div className="flex flex-col flex-1 p-4">
+        <div className="flex-1 space-y-2">
+          <h2 className="text-lg font-semibold text-(--teal)">
             {product.title}
           </h2>
           <p className="text-sm text-text-secondary line-clamp-3">
@@ -97,7 +97,7 @@ export function ProductCard({ product }: ProductCardProps) {
           </p>
         </div>
 
-        <div className="flex items-stretch justify-between gap-4">
+        <div className="flex items-stretch justify-between gap-4 mt-4">
           <div className="flex flex-col justify-between flex-1 min-w-0">
             <p className="text-lg font-bold text-teal-accent">
               {formatPrice(currentPrice ?? product.price)}
@@ -115,17 +115,17 @@ export function ProductCard({ product }: ProductCardProps) {
             </div>
           </div>
 
-          <div className="inline-flex items-center justify-center px-4 text-sm font-medium border-2 rounded-md h-11 bg-dark-bg text-[var(--teal)] border-white self-end">
+          <div className="inline-flex items-center justify-center px-4 text-sm font-medium border-2 rounded-md h-11 bg-dark-bg text-(--teal) border-white self-end">
             ★ {product.rating}
           </div>
         </div>
 
         {product.tags.length > 0 && (
-          <ul className="flex flex-wrap gap-2 list-none">
+          <ul className="flex flex-wrap gap-2 mt-4 list-none">
             {product.tags.slice(0, 3).map((tag) => (
               <li
                 key={tag}
-                className="px-3 py-1 text-xs font-medium border rounded-full bg-[var(--teal)] border-white"
+                className="px-3 py-1 text-xs font-medium border rounded-full bg-(--teal) border-white"
                 style={{ color: "var(--dark-bg)" }}
               >
                 {tag}
