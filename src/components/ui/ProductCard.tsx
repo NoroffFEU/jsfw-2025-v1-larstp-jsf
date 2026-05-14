@@ -21,9 +21,9 @@ export function ProductCard({ product }: ProductCardProps) {
   return (
     <article
       onClick={() => navigate(`/product/${product.id}`)}
-      className="overflow-hidden transition bg-white border shadow-sm cursor-pointer rounded-2xl border-slate-200 hover:-translate-y-1 hover:shadow-lg"
+      className="overflow-hidden transition border shadow-sm cursor-pointer bg-card-bg rounded-2xl border-card-border hover:-translate-y-1 hover:shadow-lg hover:shadow-teal-accent/20"
     >
-      <div className="relative aspect-4/3 bg-slate-100">
+      <div className="relative aspect-4/3 bg-card-img-bg">
         <img
           src={product.image.url}
           alt={product.image.alt}
@@ -31,7 +31,7 @@ export function ProductCard({ product }: ProductCardProps) {
         />
 
         {hasDiscount && (
-          <span className="absolute px-3 py-1 text-xs font-semibold text-white rounded-full left-3 top-3 bg-rose-600">
+          <span className="absolute px-3 py-1 text-xs font-semibold text-text-primary rounded-full left-3 top-3 bg-orange-accent">
             Sale
           </span>
         )}
@@ -39,21 +39,21 @@ export function ProductCard({ product }: ProductCardProps) {
 
       <div className="p-4 space-y-4">
         <div className="space-y-2">
-          <h2 className="text-lg font-semibold text-slate-900">
+          <h2 className="text-lg font-semibold text-text-primary">
             {product.title}
           </h2>
-          <p className="text-sm line-clamp-3 text-slate-600">
+          <p className="text-sm text-text-secondary line-clamp-3">
             {product.description}
           </p>
         </div>
 
         <div className="flex items-end justify-between gap-4">
           <div>
-            <p className="text-lg font-bold text-slate-900">
+            <p className="text-lg font-bold text-teal-accent">
               {formatPrice(currentPrice ?? product.price)}
             </p>
             {hasDiscount && (
-              <p className="text-sm line-through text-slate-500">
+              <p className="text-sm text-text-muted line-through">
                 {formatPrice(product.price)}
               </p>
             )}
