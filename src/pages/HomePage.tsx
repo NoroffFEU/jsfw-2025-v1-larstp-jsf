@@ -56,7 +56,9 @@ export function HomePage() {
           Latest picks
         </p>
         <h1 className="text-4xl font-bold text-text-primary">Products</h1>
-        <p className="max-w-2xl text-text-secondary">BROWSE! YOU ANIMAL!</p>
+        <p className="max-w-2xl text-text-secondary mix-blend-difference">
+          BROWSE! YOU ANIMAL!
+        </p>
       </div>
 
       <div className="mb-8">

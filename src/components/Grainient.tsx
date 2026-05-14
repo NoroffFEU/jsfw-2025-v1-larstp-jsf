@@ -1,6 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import { Renderer, Program, Mesh, Triangle } from "ogl";
 
+// This component renders a fullscreen WebGL shader with a grainy gradient effect. Its imported from Reactbits.dev (https://reactbits.dev/backgrounds/grainient). Free to use.
+//Created by David Haz
+
 interface GrainientProps {
   timeSpeed?: number;
   colorBalance?: number;

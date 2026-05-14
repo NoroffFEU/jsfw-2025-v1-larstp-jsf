@@ -50,7 +50,7 @@ export function CartPage() {
         {items.map((item) => (
           <div
             key={item.productId}
-            className="p-4 bg-bg-secondary border border-border-primary rounded-lg flex items-center justify-between gap-4"
+            className="p-4 bg-black/40 backdrop-blur-lg border border-border-primary rounded-lg flex items-center justify-between gap-4"
           >
             <div className="flex-1">
               <p className="text-text-primary font-semibold mb-2">
@@ -98,7 +98,7 @@ export function CartPage() {
         ))}
       </div>
 
-      <div className="bg-bg-secondary border border-border-primary rounded-lg p-6 mb-8">
+      <div className="bg-black/40 backdrop-blur-lg border border-border-primary rounded-lg p-6 mb-8">
         <div className="flex justify-between items-center mb-6">
           <p className="text-text-secondary">Subtotal:</p>
           <p className="text-text-primary font-semibold">€{total.toFixed(2)}</p>

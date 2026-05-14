@@ -40,7 +40,7 @@
   --teal-rgb: 230, 172, 36;
   --orange: #e6ac24;
   --orange-rgb: 230, 172, 36;
-  --input-placeholder: #666666;
+  --input-placeholder: #9b9b9b;
 }
 
 body {
@@ -52,6 +52,13 @@ body {
 button {
   cursor: pointer;
   background-color: var(--teal);
+  border-color: #ffffff;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 6px;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
 #root {
@@ -64,7 +71,7 @@ button {
 
 /* ------------------------------------------- Card Styles */
 .card {
-  background-color: var(--card-bg);
+  background-color: var(--card-bg) !important;
   border-color: var(--card-border);
 }
 

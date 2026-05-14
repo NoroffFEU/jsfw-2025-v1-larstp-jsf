@@ -116,7 +116,7 @@ export function ProductDetailPage() {
           </div>
         </div>
 
-        <div className="space-y-6">
+        <div className="space-y-6 ">
           <div>
             <h1 className="mb-2 text-3xl font-bold text-text-primary">
               {product.title}
@@ -184,7 +184,7 @@ export function ProductDetailPage() {
             {product.reviews.map((review) => (
               <div
                 key={review.id}
-                className="p-4 border rounded-lg border-border-primary bg-bg-secondary"
+                className="p-4 bg-black/40 backdrop-blur-lg border rounded-lg border-border-primary"
               >
                 <div className="flex items-center justify-between mb-2">
                   <p className="font-medium text-text-primary">

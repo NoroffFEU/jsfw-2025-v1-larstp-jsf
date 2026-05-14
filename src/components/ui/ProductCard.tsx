@@ -61,7 +61,7 @@ export function ProductCard({ product }: ProductCardProps) {
   return (
     <article
       onClick={() => navigate(`/product/${product.id}`)}
-      className="flex flex-col transition border shadow-sm cursor-pointer bg-card-bg rounded-2xl border-card-border hover:-translate-y-1 hover:shadow-lg hover:shadow-teal-accent/20"
+      className="flex flex-col transition border shadow-sm cursor-pointer rounded-2xl border-card-border hover:-translate-y-1 hover:shadow-lg hover:shadow-teal-accent/20 bg-black/40 backdrop-blur-xl"
     >
       <div className="relative overflow-hidden rounded-t-2xl aspect-4/3 bg-card-img-bg">
         <img
@@ -87,7 +87,7 @@ export function ProductCard({ product }: ProductCardProps) {
         )}
       </div>
 
-      <div className="flex flex-col flex-1 p-4">
+      <div className="flex flex-col flex-1 p-4 bg-black/30">
         <div className="flex-1 space-y-2">
           <h2 className="text-lg font-semibold text-(--teal)">
             {product.title}
