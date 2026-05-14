@@ -2,20 +2,20 @@
 
 :root {
   /* ------------------------------------ Backgrounds */
-  --dark-bg: #242424;
-  --card-bg: #2d2d2d;
-  --card-img-bg: #1a1a1a;
-  --input-bg: #2d2d2d;
-  --bg-secondary: #2d2d2d;
-  --bg-tertiary: #1f1f1f;
+  --dark-bg: #000000;
+  --card-bg: #1a1a1a;
+  --card-img-bg: #000000;
+  --input-bg: #1a1a1a;
+  --bg-secondary: #1a1a1a;
+  --bg-tertiary: #0a0a0a;
 
   /* -------------------------------- -o-animation: ;Text */
-  --text-primary: #ffffff;
+  --text-primary: #e6ac24;
   --text-secondary: #d1d5db;
   --text-tertiary: #9ca3af;
 
   /* Prevent Tailwind opacity from affecting text colors */
-  --text-primary-rgb: 255, 255, 255;
+  --text-primary-rgb: 230, 172, 36;
   --text-secondary-rgb: 209, 213, 219;
   --text-tertiary-rgb: 156, 163, 175;
   --text-muted-rgb: 107, 114, 128;
@@ -26,27 +26,32 @@
   --text-error: #ef4444;
 
   /* ------------------------------------- Borders */
-  --card-border: #3d3d3d;
-  --input-border: #3d3d3d;
-  --border-primary: #3d3d3d;
+  --card-border: #e6ac24;
+  --input-border: #e6ac24;
+  --border-primary: #e6ac24;
 
   /* Prevent Tailwind opacity from affecting border colors */
-  --card-border-rgb: 61, 61, 61;
-  --input-border-rgb: 61, 61, 61;
-  --border-primary-rgb: 61, 61, 61;
+  --card-border-rgb: 230, 172, 36;
+  --input-border-rgb: 230, 172, 36;
+  --border-primary-rgb: 230, 172, 36;
 
   /* ------------------------------------- Accents */
-  --teal: #14b8a6;
-  --teal-rgb: 20, 184, 166;
-  --orange: #f97316;
-  --orange-rgb: 249, 115, 22;
-  --input-placeholder: #888888;
+  --teal: #e6ac24;
+  --teal-rgb: 230, 172, 36;
+  --orange: #e6ac24;
+  --orange-rgb: 230, 172, 36;
+  --input-placeholder: #666666;
 }
 
 body {
   margin: 0;
   background-color: var(--dark-bg);
   color: #ffffff;
+}
+
+button {
+  cursor: pointer;
+  background-color: var(--teal);
 }
 
 #root {

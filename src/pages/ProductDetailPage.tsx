@@ -61,7 +61,7 @@ export function ProductDetailPage() {
         </p>
         <button
           onClick={() => navigate("/")}
-          className="px-4 py-2 text-text-primary rounded-lg bg-orange-accent hover:bg-orange-accent/80"
+          className="px-4 py-2 rounded-lg text-text-primary bg-orange-accent hover:bg-orange-accent/80"
         >
           Back to Shop
         </button>
@@ -72,6 +72,14 @@ export function ProductDetailPage() {
   const hasDiscount =
     product.discountedPrice !== null && product.discountedPrice !== undefined;
   const currentPrice = hasDiscount ? product.discountedPrice : product.price;
+  const discountPercent =
+    hasDiscount && product.price > 0
+      ? Math.round(
+          ((product.price - (product.discountedPrice ?? product.price)) /
+            product.price) *
+            100,
+        )
+      : 0;
 
   return (
     <div className="px-4 py-10 mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -90,9 +98,19 @@ export function ProductDetailPage() {
               alt={product.image.alt}
               className="object-cover w-full h-full"
             />
-            {hasDiscount && (
-              <span className="absolute px-3 py-1 text-xs font-semibold text-text-primary rounded-full left-3 top-3 bg-orange-accent">
-                Sale
+            {hasDiscount && discountPercent > 0 && (
+              <span
+                className="absolute left-0 text-xs font-bold text-text-primary"
+                style={{
+                  top: "24px",
+                  transform: "translate(-25%, -25%) rotate(-45deg)",
+                  backgroundColor: "var(--text-error)",
+                  padding: "6px 48px",
+                  display: "inline-block",
+                  boxShadow: "0 2px 6px rgba(0,0,0,0.25)",
+                }}
+              >
+                {discountPercent}% OFF
               </span>
             )}
           </div>
@@ -119,7 +137,7 @@ export function ProductDetailPage() {
               {formatPrice(currentPrice ?? product.price)}
             </p>
             {hasDiscount && (
-              <p className="text-lg text-text-muted line-through">
+              <p className="text-lg line-through text-text-muted">
                 {formatPrice(product.price)}
               </p>
             )}
@@ -134,7 +152,7 @@ export function ProductDetailPage() {
                 {product.tags.map((tag) => (
                   <li
                     key={tag}
-                    className="px-3 py-1 text-xs font-medium text-text-light rounded-full bg-card-bg"
+                    className="px-3 py-1 text-xs font-medium rounded-full text-text-light bg-card-bg"
                   >
                     {tag}
                   </li>
@@ -152,7 +170,7 @@ export function ProductDetailPage() {
               });
               addToast(`Added ${product.title} to cart`, "success");
             }}
-            className="w-full px-6 py-3 font-semibold text-text-primary transition rounded-lg bg-orange-accent hover:bg-orange-accent/80"
+            className="w-full px-6 py-3 text-lg font-semibold transition border-2 rounded-lg shadow-lg text-text-primary bg-orange-accent border-orange-accent hover:bg-orange-accent/90 focus:outline-none focus:ring-4 focus:ring-orange-accent/20"
           >
             Add to Cart
           </button>
