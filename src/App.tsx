@@ -23,7 +23,7 @@ function App() {
         </header>
 
         {/* Main stuffs */}
-        <main className="flex-grow">
+        <main className="grow">
           <Routes>
             <Route path="/product/:id" element={<ProductDetailPage />} />
             <Route path="/" element={<HomePage />} />

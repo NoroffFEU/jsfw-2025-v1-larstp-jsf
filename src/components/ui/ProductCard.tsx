@@ -23,7 +23,7 @@ export function ProductCard({ product }: ProductCardProps) {
       onClick={() => navigate(`/product/${product.id}`)}
       className="overflow-hidden transition bg-white border shadow-sm cursor-pointer rounded-2xl border-slate-200 hover:-translate-y-1 hover:shadow-lg"
     >
-      <div className="relative aspect-[4/3] bg-slate-100">
+      <div className="relative aspect-4/3 bg-slate-100">
         <img
           src={product.image.url}
           alt={product.image.alt}

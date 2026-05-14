@@ -84,7 +84,7 @@ export function ProductDetailPage() {
 
       <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
         <div>
-          <div className="relative aspect-[4/3] bg-slate-100 rounded-lg overflow-hidden">
+          <div className="relative overflow-hidden rounded-lg aspect-4/3 bg-slate-100">
             <img
               src={product.image.url}
               alt={product.image.alt}
