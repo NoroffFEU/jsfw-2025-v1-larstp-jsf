@@ -183,7 +183,7 @@ SPA routing rewrite is included in vercel.json so direct route access works:
 
 Tool Used: GitHub Copilot (Claude Haiku 4.5)
 
-First: I created a "Project workflow" doc that outlined all the things i needed for the project (pages, hooks, ui elements, etc.) and had Claude create a large To-Do list for me that i have been following baed on the order it suggested i should do things in. That was super helpful! Especially since React is SO MUCh when you're not used to it. And all the files, folders and packages can get overwhelming fast. Having a plan like this helped. I also did as Shabana suggested and set Claude to **"Explain this to me like I’m learning to code"**, which helped A LOT in how it laid out and explained concepts when i was having a hard time with them.
+First: I created a "Project workflow" doc that outlined all the things i needed for the project (pages, hooks, ui elements, etc.) and had Claude create a large To-Do list for me that i have been following based on the order it suggested i should do things in. That was super helpful! Especially since React is SO MUCH when you're not used to it. And all the files, folders and packages can get overwhelming fast. Having a plan like this helped. I also did as Shabana suggested and set Claude to **"Explain this to me like I’m learning to code"**, which helped A LOT in how it laid out and explained concepts when i was having a hard time with them. I set it to "planning mode", so that it did not finish the code for me, and to be honest this tool worked very good. It made concepts so easy to understand when i could see them directly on screen as im being guided.
 
 - **Date:** May 8
   **Purpose:** Started the project and needed help setting up React with TypeScript and Vite
