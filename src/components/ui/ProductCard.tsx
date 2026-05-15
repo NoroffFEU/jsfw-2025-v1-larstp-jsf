@@ -36,7 +36,7 @@ function AddToCartButtonInline({
         addToast(`Added ${product.title} to cart`, "success");
       }}
       aria-label={`Add ${product.title} to cart`}
-      className="w-full text-lg app-button"
+      className="w-full text-lg border-white app-button"
     >
       Add to cart
     </button>

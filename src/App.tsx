@@ -17,7 +17,7 @@ function App() {
           color1="#e6ac24"
           color2="#3d2b00"
           color3="#000000"
-          timeSpeed={0.25}
+          timeSpeed={0.275}
           zoom={0.9}
         />
       </div>

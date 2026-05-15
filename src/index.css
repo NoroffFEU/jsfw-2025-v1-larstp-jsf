@@ -64,7 +64,7 @@ button {
   justify-content: center;
   gap: 0.5rem;
   border-radius: 0.9rem;
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  border: 1px solid rgb(255, 255, 255);
   background: linear-gradient(
     180deg,
     rgba(230, 172, 36, 0.98),

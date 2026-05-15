@@ -134,7 +134,7 @@ export function ProductDetailPage() {
               {formatPrice(currentPrice ?? product.price)}
             </p>
             {hasDiscount && (
-              <p className="text-lg line-through text-text-muted">
+              <p className="text-lg line-through text-red-500">
                 {formatPrice(product.price)}
               </p>
             )}

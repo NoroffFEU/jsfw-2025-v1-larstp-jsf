@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../hooks/useCart";
 import { useToast } from "../hooks/useToast";
+import TrashIconSrc from "../assets/ix_trashcan-filled.svg";
 
 export function CartPage() {
   const navigate = useNavigate();
@@ -50,9 +51,9 @@ export function CartPage() {
         {items.map((item) => (
           <div
             key={item.productId}
-            className="flex items-center justify-between gap-4 p-4 border rounded-2xl border-white/10 bg-black/55 backdrop-blur-2xl"
+            className="flex flex-col gap-4 p-4 border rounded-2xl border-white/10 bg-black/55 backdrop-blur-2xl md:flex-row md:items-center md:justify-between"
           >
-            <div className="flex-1">
+            <div className="flex-1 md:max-w-[45%]">
               <p className="mb-2 font-semibold text-text-primary">
                 {item.title}
               </p>
@@ -61,38 +62,42 @@ export function CartPage() {
               </p>
             </div>
 
-            <div className="flex items-center gap-2">
-              <button
-                onClick={() =>
-                  updateQuantity(item.productId, item.quantity - 1)
-                }
-                className="px-3 py-2 text-sm app-button"
-              >
-                -
-              </button>
-              <span className="px-4 py-1 rounded bg-card-bg text-text-primary">
-                {item.quantity}
-              </span>
-              <button
-                onClick={() =>
-                  updateQuantity(item.productId, item.quantity + 1)
-                }
-                className="px-3 py-2 text-sm app-button"
-              >
-                +
-              </button>
-            </div>
+            <div className="flex items-center gap-4 md:ml-auto md:items-center">
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() =>
+                    updateQuantity(item.productId, item.quantity - 1)
+                  }
+                  className="px-3 py-2 text-sm app-button"
+                >
+                  -
+                </button>
+                <span className="px-4 py-1 rounded bg-card-bg text-text-primary">
+                  {item.quantity}
+                </span>
+                <button
+                  onClick={() =>
+                    updateQuantity(item.productId, item.quantity + 1)
+                  }
+                  className="px-3 py-2 text-sm app-button"
+                >
+                  +
+                </button>
+              </div>
 
-            <div className="text-right">
-              <p className="mb-2 font-semibold text-text-primary">
-                €{(item.price * item.quantity).toFixed(2)}
-              </p>
-              <button
-                onClick={() => handleRemove(item.productId, item.title)}
-                className="px-4 py-2 text-sm app-button"
-              >
-                Remove
-              </button>
+              <div className="flex items-center gap-2 md:ml-4 md:min-w-30">
+                <p className="font-semibold text-text-primary md:mr-2">
+                  €{(item.price * item.quantity).toFixed(2)}
+                </p>
+                <button
+                  onClick={() => handleRemove(item.productId, item.title)}
+                  className="inline-flex items-center gap-2 px-3 py-2 text-sm app-button"
+                  aria-label={`Remove ${item.title} from cart`}
+                  title={`Remove ${item.title}`}
+                >
+                  <img src={TrashIconSrc} alt="Remove" className="w-4 h-4" />
+                </button>
+              </div>
             </div>
           </div>
         ))}

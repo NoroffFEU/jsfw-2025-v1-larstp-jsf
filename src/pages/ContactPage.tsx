@@ -61,7 +61,6 @@ export function ContactPage() {
       ...prev,
       [name]: value,
     }));
-    // Clear error for this field when user starts typing
     if (errors[name as keyof FormErrors]) {
       setErrors((prev) => ({
         ...prev,
@@ -85,9 +84,9 @@ export function ContactPage() {
   };
 
   return (
-    <main className="flex-1 max-w-2xl mx-auto p-6 sm:px-6 lg:px-8 w-full">
+    <main className="flex-1 w-full max-w-2xl p-6 mx-auto sm:px-6 lg:px-8">
       <div className="mb-8">
-        <h1 className="text-4xl font-bold text-text-primary mb-2">
+        <h1 className="mb-2 text-4xl font-bold text-text-primary">
           Contact Us
         </h1>
         <p className="text-text-secondary">
@@ -96,11 +95,10 @@ export function ContactPage() {
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-6">
-        {/* Full Name */}
         <div>
           <label
             htmlFor="fullName"
-            className="block text-sm font-medium text-text-primary mb-2"
+            className="inline-flex items-center px-3 py-1 mb-2 text-sm font-medium border rounded-full border-white/10 bg-black/45 text-text-primary backdrop-blur-2xl"
           >
             Full Name
           </label>
@@ -110,19 +108,18 @@ export function ContactPage() {
             name="fullName"
             value={formData.fullName}
             onChange={handleChange}
-            className="w-full px-4 py-3 bg-input-bg text-text-primary border border-input-border rounded-lg outline-none focus:border-teal-accent focus:ring-2 focus:ring-teal-accent/30"
+            className="w-full px-4 py-3 border rounded-lg outline-none bg-input-bg text-text-primary border-input-border focus:border-teal-accent focus:ring-2 focus:ring-teal-accent/30"
             placeholder="Your name"
           />
           {errors.fullName && (
-            <p className="text-text-error text-sm mt-1">{errors.fullName}</p>
+            <p className="mt-1 text-sm text-text-error">{errors.fullName}</p>
           )}
         </div>
 
-        {/* Subject */}
         <div>
           <label
             htmlFor="subject"
-            className="block text-sm font-medium text-text-primary mb-2"
+            className="inline-flex items-center px-3 py-1 mb-2 text-sm font-medium border rounded-full border-white/10 bg-black/45 text-text-primary backdrop-blur-2xl"
           >
             Subject
           </label>
@@ -132,19 +129,18 @@ export function ContactPage() {
             name="subject"
             value={formData.subject}
             onChange={handleChange}
-            className="w-full px-4 py-3 bg-input-bg text-text-primary border border-input-border rounded-lg outline-none focus:border-teal-accent focus:ring-2 focus:ring-teal-accent/30"
+            className="w-full px-4 py-3 border rounded-lg outline-none bg-input-bg text-text-primary border-input-border focus:border-teal-accent focus:ring-2 focus:ring-teal-accent/30"
             placeholder="What is this about?"
           />
           {errors.subject && (
-            <p className="text-text-error text-sm mt-1">{errors.subject}</p>
+            <p className="mt-1 text-sm text-text-error">{errors.subject}</p>
           )}
         </div>
 
-        {/* Email */}
         <div>
           <label
             htmlFor="email"
-            className="block text-sm font-medium text-text-primary mb-2"
+            className="inline-flex items-center px-3 py-1 mb-2 text-sm font-medium border rounded-full border-white/10 bg-black/45 text-text-primary backdrop-blur-2xl"
           >
             Email
           </label>
@@ -154,19 +150,18 @@ export function ContactPage() {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-4 py-3 bg-input-bg text-text-primary border border-input-border rounded-lg outline-none focus:border-teal-accent focus:ring-2 focus:ring-teal-accent/30"
+            className="w-full px-4 py-3 border rounded-lg outline-none bg-input-bg text-text-primary border-input-border focus:border-teal-accent focus:ring-2 focus:ring-teal-accent/30"
             placeholder="your@email.com"
           />
           {errors.email && (
-            <p className="text-text-error text-sm mt-1">{errors.email}</p>
+            <p className="mt-1 text-sm text-text-error">{errors.email}</p>
           )}
         </div>
 
-        {/* Message */}
         <div>
           <label
             htmlFor="message"
-            className="block text-sm font-medium text-text-primary mb-2"
+            className="inline-flex items-center px-3 py-1 mb-2 text-sm font-medium border rounded-full border-white/10 bg-black/45 text-text-primary backdrop-blur-2xl"
           >
             Message
           </label>
@@ -176,16 +171,15 @@ export function ContactPage() {
             value={formData.message}
             onChange={handleChange}
             rows={5}
-            className="w-full px-4 py-3 bg-input-bg text-text-primary border border-input-border rounded-lg outline-none focus:border-teal-accent focus:ring-2 focus:ring-teal-accent/30 resize-none"
+            className="w-full px-4 py-3 border rounded-lg outline-none resize-none bg-input-bg text-text-primary border-input-border focus:border-teal-accent focus:ring-2 focus:ring-teal-accent/30"
             placeholder="Your message here..."
           />
           {errors.message && (
-            <p className="text-text-error text-sm mt-1">{errors.message}</p>
+            <p className="mt-1 text-sm text-text-error">{errors.message}</p>
           )}
         </div>
 
-        {/* Submit Button */}
-        <button type="submit" className="app-button w-full px-6 py-3 text-lg">
+        <button type="submit" className="w-full px-6 py-3 text-lg app-button">
           Send Message
         </button>
       </form>
