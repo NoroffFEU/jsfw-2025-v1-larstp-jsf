@@ -226,7 +226,8 @@ First: I created a "Project workflow" doc that outlined all the things i needed 
   **Outcome:** I have created the cart and checkout page, but it didnt move there correctly. I had placed stuff n the wrong order. quick fix
 
 - **Date:** 14
-  **Purpose:** I was struggling with background, so i figured it was a golden opportunity to learn how to implement 3rd party
+  **Purpose:** I was struggling with background, so i figured it was a golden opportunity to learn how to implement 3rd party code!
+  **Outcome:** It showed me how to implement and install code from other sources quickly, especially ones that deed npm/npx to install a package before use. This was very cool, and i can see that helping in design going forward!
 
 - **Date:** 15 May
   **Purpose:** I screwed up a lot when moving the Header and Footer from the main to their own files. needed help troubleshooting how to fix
