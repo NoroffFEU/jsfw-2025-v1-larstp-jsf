@@ -24,7 +24,7 @@ export function CheckoutSuccessPage() {
           </p>
           <button
             onClick={() => navigate("/")}
-            className="px-6 py-3 bg-teal-accent text-white rounded-lg hover:bg-teal-accent/80 font-semibold inline-block"
+            className="app-button px-6 py-3 font-semibold inline-block"
           >
             Back to Shop
           </button>

@@ -36,8 +36,7 @@ function AddToCartButtonInline({
         addToast(`Added ${product.title} to cart`, "success");
       }}
       aria-label={`Add ${product.title} to cart`}
-      className="inline-flex items-center justify-center w-full text-lg font-semibold border-2 rounded-md shadow-sm h-11 bg-orange-accent text-dark-bg border-orange-accent hover:bg-orange-accent/90 focus:outline-none focus:ring-2 focus:ring-orange-accent/30"
-      style={{ color: "var(--dark-bg)" }}
+      className="w-full text-lg app-button"
     >
       Add to cart
     </button>
@@ -61,7 +60,7 @@ export function ProductCard({ product }: ProductCardProps) {
   return (
     <article
       onClick={() => navigate(`/product/${product.id}`)}
-      className="flex flex-col transition border shadow-sm cursor-pointer rounded-2xl border-card-border hover:-translate-y-1 hover:shadow-lg hover:shadow-teal-accent/20 bg-black/40 backdrop-blur-xl"
+      className="flex flex-col overflow-hidden transition border shadow-sm cursor-pointer rounded-2xl border-white/10 bg-black/60 backdrop-blur-2xl hover:-translate-y-1 hover:shadow-[0_24px_80px_rgba(0,0,0,0.45)]"
     >
       <div className="relative overflow-hidden rounded-t-2xl aspect-4/3 bg-card-img-bg">
         <img
@@ -87,7 +86,7 @@ export function ProductCard({ product }: ProductCardProps) {
         )}
       </div>
 
-      <div className="flex flex-col flex-1 p-4 bg-black/30">
+      <div className="flex flex-col flex-1 p-4 bg-black/35">
         <div className="flex-1 space-y-2">
           <h2 className="text-lg font-semibold text-(--teal)">
             {product.title}

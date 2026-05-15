@@ -14,14 +14,14 @@ export function ToastContainer() {
               ? "bg-green-500"
               : toast.type === "error"
                 ? "bg-red-500"
-                : "bg-blue-500"  /* just ugly stand-in colours for now */ 
+                : "bg-blue-500" /* just ugly stand-in colours for now */
           }`}
         >
           <div className="flex items-center justify-between gap-4">
             <p>{toast.message}</p>
             <button
               onClick={() => removeToast(toast.id)}
-              className="text-lg font-bold text-white hover:opacity-80"
+              className="app-button h-8 w-8 p-0 text-lg"
             >
               ×
             </button>

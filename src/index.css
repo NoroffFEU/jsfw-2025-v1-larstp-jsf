@@ -51,14 +51,51 @@ body {
 
 button {
   cursor: pointer;
-  background-color: var(--teal);
-  border-color: #ffffff;
-  color: black;
-  padding: 10px 20px;
-  border-radius: 6px;
+  font: inherit;
+  background: none;
+  border: 0;
+  color: inherit;
+  padding: 0;
+}
+
+.app-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: linear-gradient(
+    180deg,
+    rgba(230, 172, 36, 0.98),
+    rgba(198, 143, 28, 0.96)
+  );
+  color: #120f05;
+  font-weight: 800;
+  padding: 0.75rem 1.15rem;
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.36);
   transition:
-    background-color 0.3s,
-    color 0.3s;
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    filter 160ms ease,
+    opacity 160ms ease;
+}
+
+.app-button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.03);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.42);
+}
+
+.app-button:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.85);
+  outline-offset: 2px;
+}
+
+.app-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  transform: none;
 }
 
 #root {

@@ -59,10 +59,7 @@ export function ProductDetailPage() {
         <p className="mb-4 text-text-error">
           Error: {error || "Product not found"}
         </p>
-        <button
-          onClick={() => navigate("/")}
-          className="px-4 py-2 rounded-lg text-text-primary bg-orange-accent hover:bg-orange-accent/80"
-        >
+        <button onClick={() => navigate("/")} className="px-4 py-2 app-button">
           Back to Shop
         </button>
       </div>
@@ -85,7 +82,7 @@ export function ProductDetailPage() {
     <div className="px-4 py-10 mx-auto max-w-7xl sm:px-6 lg:px-8">
       <button
         onClick={() => navigate("/")}
-        className="mb-8 font-medium text-teal-accent hover:text-orange-accent"
+        className="px-4 py-2 mb-8 text-sm app-button"
       >
         ← Back to Shop
       </button>
@@ -170,7 +167,7 @@ export function ProductDetailPage() {
               });
               addToast(`Added ${product.title} to cart`, "success");
             }}
-            className="w-full px-6 py-3 text-lg font-semibold transition border-2 rounded-lg shadow-lg text-text-primary bg-orange-accent border-orange-accent hover:bg-orange-accent/90 focus:outline-none focus:ring-4 focus:ring-orange-accent/20"
+            className="w-full px-6 py-3 text-lg app-button"
           >
             Add to Cart
           </button>
@@ -178,13 +175,13 @@ export function ProductDetailPage() {
       </div>
 
       {product.reviews && product.reviews.length > 0 && (
-        <div className="mt-16 space-y-6">
+        <div className="mt-16 space-y-6 rounded-4xl border border-white/10 bg-black/25 p-4 shadow-[0_30px_90px_rgba(0,0,0,0.45)] backdrop-blur-2xl sm:p-6">
           <h2 className="text-2xl font-bold text-text-primary">Reviews</h2>
           <div className="space-y-4">
             {product.reviews.map((review) => (
               <div
                 key={review.id}
-                className="p-4 bg-black/40 backdrop-blur-lg border rounded-lg border-border-primary"
+                className="p-4 border rounded-2xl border-white/10 bg-black/55 backdrop-blur-2xl"
               >
                 <div className="flex items-center justify-between mb-2">
                   <p className="font-medium text-text-primary">

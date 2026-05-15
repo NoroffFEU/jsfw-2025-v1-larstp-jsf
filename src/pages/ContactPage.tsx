@@ -185,10 +185,7 @@ export function ContactPage() {
         </div>
 
         {/* Submit Button */}
-        <button
-          type="submit"
-          className="w-full px-6 py-3 text-lg font-semibold border-2 rounded-lg shadow-lg bg-orange-accent text-dark-bg border-orange-accent hover:bg-orange-accent/90 focus:outline-none focus:ring-4 focus:ring-orange-accent/20"
-        >
+        <button type="submit" className="app-button w-full px-6 py-3 text-lg">
           Send Message
         </button>
       </form>

@@ -1,20 +1,18 @@
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { HomePage } from "./pages/HomePage";
 import { ProductDetailPage } from "./pages/ProductDetailPage";
 import { CartPage } from "./pages/CartPage";
 import { CheckoutSuccessPage } from "./pages/CheckoutSuccessPage";
 import { ContactPage } from "./pages/ContactPage";
-import { useCart } from "./hooks/useCart";
+import { Header } from "./components/layout/Header";
+import { Footer } from "./components/layout/Footer";
 import { ToastContainer } from "./components/ui/ToastContainer";
 import Grainient from "./components/Grainient";
 
 function App() {
-  const navigate = useNavigate();
-  const { items } = useCart();
-
   return (
     <>
-      <div className="fixed inset-0 z-0 h-screen w-screen bg-dark-bg">
+      <div className="fixed inset-0 z-0 w-screen h-screen bg-dark-bg">
         <Grainient
           color1="#e6ac24"
           color2="#3d2b00"
@@ -23,28 +21,8 @@ function App() {
           zoom={0.9}
         />
       </div>
-      <div className="flex flex-col min-h-screen text-text-primary relative z-10 bg-transparent">
-        <header className="border-b border-border-primary bg-transparent">
-          <div className="flex items-center justify-between px-4 py-4 mx-auto max-w-7xl">
-            <h1 className="text-2xl font-bold text-teal-accent">
-              Mr. Fantastic's Online Emporium
-            </h1>
-            <div className="flex items-center gap-6">
-              <button
-                onClick={() => navigate("/contact")}
-                className="text-sm font-medium text-orange-accent hover:text-orange-accent/80"
-              >
-                Contact
-              </button>
-              <button
-                onClick={() => navigate("/cart")}
-                className="text-sm font-medium text-orange-accent hover:text-orange-accent/80"
-              >
-                Cart: {items.reduce((total, item) => total + item.quantity, 0)}
-              </button>
-            </div>
-          </div>
-        </header>
+      <div className="relative z-10 flex flex-col min-h-screen text-text-primary">
+        <Header />
 
         <main className="grow">
           <Routes>
@@ -56,11 +34,7 @@ function App() {
           </Routes>
         </main>
 
-        <footer className="mt-12 border-t text-text-primary bg-transparent border-border-primary">
-          <div className="px-4 py-8 mx-auto max-w-7xl">
-            <p>&copy; 2026 Online Shop. All rights reserved.</p>
-          </div>
-        </footer>
+        <Footer />
       </div>
       <ToastContainer />
     </>
